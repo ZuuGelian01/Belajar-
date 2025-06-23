@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Tebak Angka</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .game-container {
+      background: #1f1f1f;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,255,255,0.3);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: slideUp 1s ease-out;
+    }
+
+    input[type="number"] {
+      width: 100px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: transform 0.2s ease;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      transform: scale(1.05);
+    }
+
+    button {
+      padding: 10px 20px;
+      font-weight: bold;
+      background: #00ffff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #00dddd;
+      transform: scale(1.05);
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ff77ff;
+      min-height: 24px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .back-link {
+      margin-top: 40px;
+      color: #ff77ff;
+      text-decoration: none;
+      animation: fadeIn 2s ease;
+    }
+
+    .back-link:hover {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 Game Tebak Angka</h1>
+
+  <div class="game-container">
+    <p>Saya menyimpan angka antara <strong>1</strong> dan <strong>20</strong>. Bisakah kamu tebak?</p>
+    <input type="number" id="guessInput" min="1" max="10" />
+    <br />
+    <button onclick="checkGuess()">Tebak!</button>
+    <div class="result" id="resultText"></div>
+  </div>
+
+  <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+
+  <script>
+    let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guessInput").value);
+      const result = document.getElementById("resultText");
+
+      if (isNaN(guess)) {
+        result.textContent = "Masukkan angka dulu!";
+        result.style.color = "#ff7777";
+        return;
+      }
+
+      if (guess < 1 || guess > 20) {
+        result.textContent = "Angka harus antara 1 dan 20!";
+        result.style.color = "#ffbb00";
+        return;
+      }
+
+      if (guess === secretNumber) {
+        result.textContent = "🎉 Selamat! Tebakan kamu benar!";
+        result.style.color = "#00ff88";
+      } else {
+        result.textContent = `❌ Salah! Angkanya ${secretNumber > guess ? "lebih besar" : "lebih kecil"} dari ${guess}`;
+        result.style.color = "#ff77ff";
+      }
+    }
+  </script>
+
+</body>
+</html>

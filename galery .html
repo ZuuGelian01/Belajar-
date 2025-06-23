@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri Zuu Gelian</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .links {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ff77ff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #00ffff;
+      padding-bottom: 8px;
+      color: #00ffff;
+      margin-top: 40px;
+    }
+
+    .gallery {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+     gap: 15px;
+     margin-top: 20px;
+     justify-items: center;
+     animation: fadeIn 1s ease-in-out;
+    }
+
+   .gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    }
+
+    .gallery img,
+    .gallery video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      height:auto;
+    }
+  
+
+    .gallery img:hover,
+    .gallery video:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    .lightbox:active {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Galeri Zuu Gelian</h1>
+    <p>Kumpulan Foto dan Video istri ku ✨</p>
+  </header>
+
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="saya.html">Tentang Saya</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="Gm.html">game</a>
+  </div>
+
+  <div class="container">
+
+    <h2>📸 Foto-Foto</h2>
+    <div class="gallery">
+      <img src="akane1.jpg" alt="Foto 1" onclick="showLightbox(this)" />
+      <img src="akane2.jpg" alt="Foto 2" onclick="showLightbox(this)" />
+      <img src="akane3.jpg" alt="Foto 3" onclick="showLightbox(this)" />
+      <img src="akane4.jpg" alt="Foto 4" onclick="showLightbox(this)" />
+      <img src="akane5.jpg" alt="foto 5" onclick="showLightbox(this)" />
+      <img src="akane6.jpg" alt="foto 6" onclick="showLightbox(this)" />
+      <img src="akane7.jpg" alt="foto 7" onclick="showLightbox(this)" />
+      <img src="akane8.jpg" alt="foto 8" onclick="showLightbox(this)" />
+      <img src="akane9.jpg" alt="foto 9" onclick="showLightbox(this)" />
+    </div>
+
+    <h2>🎥 Video</h2>
+    <div class="gallery">
+      </video>
+      <video controls autoplay muted loop>
+        <source src="akane1.mp4" type="video/mp4">
+        
+      </video>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Zuu Gelian. Semua istri aku.
+  </footer>
+
+  <!-- Lightbox Element -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Preview Gambar" />
+  </div>
+
+  <!-- JavaScript Lightbox -->
+  <script>
+    function showLightbox(img) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      lightbox.style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

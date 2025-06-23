@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zuu Gelian</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1f1f1f;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #00ffff;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      margin: 15px 0 5px;
+      color: #00ffff;
+    }
+
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ff77ff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h3 {
+      border-bottom: 2px solid #00ffff;
+      padding-bottom: 5px;
+      color: #00ffff;
+    }
+
+    /* Fakta Unik */
+    .fakta-unik .fact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+      animation: slide-in 1s ease forwards;
+    }
+
+    .fact-card {
+      background: #2c2c2c;
+      border-left: 5px solid #00ffff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,255,255,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .fact-card:hover {
+      transform: translateX(5px);
+      background: #333;
+    }
+
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Musik Favorit */
+    .music-section {
+      animation: slide-in 1s ease forwards;
+    }
+
+    .music-card {
+      background:black;
+      border-radius: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .music-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .track-info {
+      flex: 1;
+    }
+
+    .track-info h4 {
+      margin: 0;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .track-info p {
+      margin: 5px 0 10px;
+      font-size: 0.9em;
+    }
+
+    .player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .player button {
+      background: #222;
+      color: #1db954;
+      border: none;
+      font-size: 1.5rem;
+      padding: 5px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .player button:hover {
+      background: #333;
+    }
+
+    .progress {
+      flex: 1;
+      height: 8px;
+      background: #444;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: cyan;
+      transition: width 0.2s linear;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 14px;
+    }
+   .progress {
+     cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Zuu Gelian</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="akane.jpg" alt="Foto Zuu">
+      <h2>Penasaran | Pelajar | Bermain</h2>
+      <div class="links">
+        <a href="galery .html">Galeri</a>
+        <a href="saya.html">Tentang Saya</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="Game.html">Game</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Sedikit Tentang Saya</h3>
+      <p>Hai, saya Zuu Gelian. Kalian bisa panggil Zuu atau Dani. Saya lahir di Jateng pada tahun 2008 dan suka eksplorasi hal baru.</p>
+    </div>
+
+    <div class="section fakta-unik">
+      <h3>Fakta Unik Tentang Saya</h3>
+      <div class="fact-list">
+        <div class="fact-card">🎧 Suka banget dengerin musik sambil ngoding</div>
+        <div class="fact-card">🌌 Paling suka suasana malam & langit bintang</div>
+        <div class="fact-card">💙 Suami Kurokawa Akane</div>
+        <div class="fact-card">💡 Suka ngoding karena suka berimajinasi</div>
+        <div class="fact-card">🎮 Punya impian bikin game sendiri suatu hari nanti</div>
+      </div>
+    </div>
+
+   <!-- ... Bagian awal HTML tidak berubah ... -->
+
+<div class="section music-section">
+  <h3>Musik Favorit Saya 🎶</h3>
+<!-- Musik 1: Favorite Girl -->
+<div class="music-card">
+  <img src="Justin Bieber.jpg" alt="Favorite Girl">
+  <div class="track-info">
+    <h4>Favorite Girl</h4>
+    <p>Justin Bieber</p>
+    <div class="player">
+      <button id="playPauseBtn1">▶️</button>
+      <div class="progress" id="progressContainer1">
+        <div class="progress-bar" id="progressBar1"></div>
+      </div>
+      <audio id="audio1" src="Favorite Girl.mp3"></audio>
+    </div>
+  </div>
+</div>
+
+<!-- Musik 2: Love Story -->
+<div class="music-card">
+  <img src="Taylor Swift.jpg" alt="Love Story">
+  <div class="track-info">
+    <h4>Love Story</h4>
+    <p>Taylor Swift</p>
+    <div class="player">
+      <button id="playPauseBtn2">▶️</button>
+      <div class="progress" id="progressContainer2">
+        <div class="progress-bar" id="progressBar2"></div>
+      </div>
+      <audio id="audio2" src="Love Story.mp3"></audio>
+    </div>
+  </div>
+</div>
+    
+  </div>
+  <footer>
+    &copy; 2025 Zuu Gelian. Belajar.
+  </footer>
+
+ <script>
+  const audios = [
+    {
+      audio: document.getElementById("audio1"),
+      button: document.getElementById("playPauseBtn1"),
+      bar: document.getElementById("progressBar1"),
+      container: document.getElementById("progressContainer1"),
+    },
+    {
+      audio: document.getElementById("audio2"),
+      button: document.getElementById("playPauseBtn2"),
+      bar: document.getElementById("progressBar2"),
+      container: document.getElementById("progressContainer2"),
+    }
+  ];
+
+  // Fungsi untuk pause semua lagu
+  function pauseAllExcept(currentAudio) {
+    audios.forEach(({ audio, button }) => {
+      if (audio !== currentAudio) {
+        audio.pause();
+        button.textContent = "▶️";
+      }
+    });
+  }
+
+  audios.forEach(({ audio, button, bar, container }) => {
+    button.addEventListener("click", () => {
+      if (audio.paused) {
+        pauseAllExcept(audio);
+        audio.play();
+        button.textContent = "⏸️";
+      } else {
+        audio.pause();
+        button.textContent = "▶️";
+      }
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      bar.style.width = `${progress}%`;
+    });
+
+    container.addEventListener("click", function (e) {
+      const width = this.clientWidth;
+      const offsetX = e.offsetX;
+      const duration = audio.duration;
+      audio.currentTime = (offsetX / width) * duration;
+    });
+
+    audio.addEventListener("ended", () => {
+      button.textContent = "▶️";
+    });
+  });
+</script>
+
+</body>
+</html>
